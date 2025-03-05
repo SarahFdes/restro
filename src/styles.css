@@ -1,26 +1,35 @@
-/* header css */
+/* common css */
+.section-padding {
+    padding: 2rem 18rem;
+}
+.primary-color {
+    color: #495e57;  
+}
+/* Header css */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #333;
+    background-color: #fff;
     color: white;
   }
-.header .logo {
-    font-size: 24px;
-}
+  
+  .header .logo {
+    flex: 0 0 auto; /* The logo won't grow or shrink */
+  }
+  
   .header .logo-img {
-    height: 50px; /* Adjust size of the logo */
+    height: 50px; /* Adjust the size of your logo */
   }
   
   .header .nav {
-    display: flex;
+    flex: 1; /* Allow the nav to take up remaining space */
   }
   
   .header .nav-links {
     list-style-type: none;
     display: flex;
+    justify-content: flex-end; /* Align links to the right */
     gap: 20px;
   }
   
@@ -29,12 +38,107 @@
   }
   
   .header .nav-links li a {
-    color: white;
+    color: #000;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: Karla, sans-serif;
   }
   
   .header .nav-links li a:hover {
+    color: #495e57;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Stack logo and nav links vertically on small screens */
+      align-items: center;
+    }
+  
+    .header .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  /* Footer.css */
+.footer {
+    background-color: #495e57;
+    color: white;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-logo {
+    width: 100px; /* Set the logo size */
+    height: auto;
+  }
+  
+  .footer-description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    font-family: Karla, sans-serif;
+  }
+  
+  .footer-column p,
+  .footer-column ul {
+    font-size: 14px;
+    font-family: Karla, sans-serif;
+  }
+  
+  .footer-links {
+    list-style: none;
+    font-family: Karla, sans-serif;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-links li a {
+    color: white;
+    text-decoration: none;
+    font-family: Karla, sans-serif;
+  }
+  
+  .footer-links li a:hover {
     text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    font-family: Karla, sans-serif;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr; /* Stack into 2 columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-container {
+      grid-template-columns: 1fr; /* Stack into 1 column on small screens */
+    }
   }
   

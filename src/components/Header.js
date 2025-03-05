@@ -1,17 +1,13 @@
 // src/components/Header.js
 import React from 'react';
-import '../styles.css';
+import '../styles.css'; 
 
 const Header = () => {
   return (
-    <header className="header">
-      {/* Logo Section */}
+    <header className="header section-padding">
       <div className="logo">
-        <a href="/">
-          <img src="../logo.png" alt="Logo" className="logo-img" /> {/* Replace with your actual logo */}
-        </a>
-      </div>
-
+        <img src="https://little-lemon-web.netlify.app/static/media/Logo.2ff8591bab2e96129ec15171b2fa759f.svg" alt="Logo" className="logo-img" /> 
+    </div>
       {/* Navigation Links */}
       <nav className="nav">
         <ul className="nav-links">
