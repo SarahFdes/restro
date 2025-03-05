@@ -1,13 +1,21 @@
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import Homepage from './components/Homepage';
 
 function App() {
   return (
     <React.Fragment>
-      <Header />
-      <Footer />
-  </React.Fragment>
+      <Router>
+          <div>
+            <Routes> {/* Wrap all your routes inside <Routes> */}
+              <Route path="/" element={<Homepage />} />
+              <Route path="/about" element={<div>About Page</div>} />
+              <Route path="/services" element={<div>Services Page</div>} />
+              <Route path="/contact" element={<div>Contact Page</div>} />
+            </Routes>
+          </div>
+      </Router>
+    </React.Fragment>
   );
 }
 
