@@ -1,43 +1,36 @@
-import React, { useReducer } from 'react';
+import React, { useState} from 'react';
 import BookingForm from './BookingForm';
 
-const initialState = {
-  availableTimes: [],
-};
-
-const timesReducer = (state, action) => {
-  switch (action.type) {
-    case 'SET_TIMES':
-      return {
-        ...state,
-        availableTimes: action.times, // Update availableTimes based on action
-      };
-    default:
-      return state;
-  }
-};
 
 const Booking = () => {
-  // Initialize availableTimes using useReducer
-  const [state, dispatch] = useReducer(timesReducer, initialState);
+  const [availableTimes] = useState([]);
+  const [ setSelectedDate] = useState('');
 
-  // Function to initialize available times (for now, it returns fixed times)
-  const initializeTimes = () => {
-    return ['12:00 PM', '2:00 PM', '4:00 PM', '6:00 PM', '8:00 PM'];
+  // Fetch available times when the selected date changes
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
   };
 
-  // Function to handle updating available times based on selected date
-  const updateTimes = (selectedDate) => {
-    // For now, the available times are the same regardless of the date
-    const times = initializeTimes();
-    dispatch({ type: 'SET_TIMES', times });
-  };
+  // useEffect(() => {
+  //   if (selectedDate) {
+  //     fetchAPI(selectedDate)
+  //       .then((times) => {
+  //         setAvailableTimes(times); // Set the available times once fetched
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error fetching available times:', error);
+  //       });
+  //   }
+  // }, [selectedDate]); // Fetch times when selectedDate changes
 
   return (
     <React.Fragment>
-      <BookingForm availableTimes={state.availableTimes} onDateChange={updateTimes} />
+      <BookingForm
+        availableTimes={availableTimes}
+        onDateChange={handleDateChange}
+      />
     </React.Fragment>
-    );
+  );
 };
 
 export default Booking;
