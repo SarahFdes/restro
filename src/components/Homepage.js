@@ -2,14 +2,14 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Hero from './Hero';
-import BookingPage from './BookingPage';
+import About from './About';
 
 function Homepage() {
   return (
     <React.Fragment>
         <Header />
         <Hero />
-        <BookingPage />
+        <About />
         <Footer />
     </React.Fragment>
   );

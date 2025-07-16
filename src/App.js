@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import ConfirmBooking from './components/ConfirmBooking';
+import BookingPage from './components/BookingPage';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
           <div>
             <Routes> {/* Wrap all your routes inside <Routes> */}
               <Route path="/" element={<Homepage />} />
-              <Route path="/confirmation" element={<ConfirmBooking />} />
+              <Route path="/reservation" element={<BookingPage />} />
               <Route path="/about" element={<div>About Page</div>} />
               <Route path="/services" element={<div>Services Page</div>} />
               <Route path="/contact" element={<div>Contact Page</div>} />

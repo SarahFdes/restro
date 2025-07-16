@@ -269,6 +269,114 @@ select {
     font-size: 16px;
   }
 }
+/* about css  */
+.two-column-container {
+  display: flex;
+  align-items: center; /* Vertically align items in the center */
+  gap: 40px; /* Space between the two columns */
+  padding: 40px;
+  max-width: 1200px; /* Limit the overall width */
+  margin: 0 auto; /* Center the container on the page */
+}
+
+.text-column {
+  flex: 1; /* Allows the text column to grow and take available space */
+  padding-right: 20px; /* Add some space between text and images */
+}
+
+.text-column h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #000;
+  font-family: Markazi Text, serif;
+  text-align: left;
+}
+
+.text-column h6 {
+  color: #000;
+  font-family: Markazi Text, serif;
+  text-align: left;
+  font-size: 26px;
+  margin: 0;
+}
+
+.text-column p {
+  color: #000;
+    font-family: Karla, sans-serif;
+    font-size: 18px;
+    line-height: 1.7em;
+    margin-top: 2em;
+}
+
+.image-column {
+  flex: 1; /* Allows the image column to grow and take available space */
+  display: flex;
+  justify-content: center; /* Center the image wrapper within its column */
+  align-items: center;
+}
+
+.image-overlay-wrapper {
+  position: relative; /* Essential for positioning child images */
+  width: 100%; /* Take full width of its parent column */
+  padding-bottom: 75%; /* Maintain aspect ratio (e.g., 4:3) */
+  /* Or, you can set a fixed height if preferred: height: 400px; */
+}
+
+.image-overlay-wrapper img {
+  position: absolute;
+  width: 70%; /* Adjust as needed for overlap */
+  height: 60%;
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.image-bottom {
+  top: 0;
+  left: 0;
+  z-index: 1; /* Bottom image */
+  transform: translate(0, 0); /* Initial position */
+}
+
+.image-top {
+  top: 20%; /* Offset from the top */
+  left: 30%; /* Offset from the left */
+  z-index: 2; /* Top image */
+  transform: translate(0, 0) scale(1.1); /* Slightly larger and offset for emphasis */
+}
+
+/* Optional: Hover effects */
+.image-top:hover {
+  transform: translate(5%, 5%) scale(1.15); /* Move slightly and grow on hover */
+}
+
+.image-bottom:hover {
+  transform: translate(-5%, -5%) scale(1.05); /* Move slightly and grow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .two-column-container {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .text-column {
+    padding-right: 0;
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .image-overlay-wrapper {
+    width: 90%; /* Adjust width for smaller screens */
+    padding-bottom: 90%; /* Adjust aspect ratio if needed */
+  }
+
+  .image-top {
+    top: 10%;
+    left: 20%;
+  }
+}
   /* Footer.css */
 .footer {
     background-color: #495e57;
