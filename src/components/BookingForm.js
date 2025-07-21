@@ -129,8 +129,8 @@ const handleSubmit = async (e) => {
 
   return (
     <div>
-    <h2>Table Reservation Form</h2>
-    <form onSubmit={handleSubmit}>
+      <h2>Table Reservation Form</h2>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="date">Date</label>
           <input

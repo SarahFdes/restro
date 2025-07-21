@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/reservation'); 
+  };
+
   return (
     <section className="hero section-padding">
       <div className="hero-container">
@@ -12,7 +19,7 @@ const Hero = () => {
           <p className="hero-description">
           We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
           </p>
-          <button className="reserve-button">Reserve a Table</button>
+          <button className="reserve-button" onClick={handleClick}>Reserve a Table</button>
         </div>
 
         {/* Second Column - Image */}
