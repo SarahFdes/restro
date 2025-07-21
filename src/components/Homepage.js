@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Hero from './Hero';
 import About from './About';
 import MenuCards from './MenuCards';
+import Testimonials from './Testimonials';
 
 function Homepage() {
   return (
@@ -12,6 +13,7 @@ function Homepage() {
         <Hero />
         <MenuCards />
         <About />
+        <Testimonials />
         <Footer />
     </React.Fragment>
   );

@@ -109,6 +109,7 @@ body {
     font-family: "Markazi Text", serif;
     color: #fff;
     margin-top: 0;
+    text-align: left;
   }
   
   .hero-description {
@@ -547,5 +548,54 @@ select {
     .footer-container {
       grid-template-columns: 1fr; /* Stack into 1 column on small screens */
     }
+  }
+  .testimonials-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .testimonials-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .testimonial-card {
+    background-color: #fff8f0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .feedback {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .name {
+    font-weight: bold;
+    color: #222;
   }
   
