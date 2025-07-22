@@ -12,6 +12,7 @@ function App() {
             <Routes> {/* Wrap all your routes inside <Routes> */}
               <Route path="/" element={<Homepage />} />
               <Route path="/reservation" element={<BookingPage />} />
+              <Route path="/confirmation" element={<ConfirmBooking />} />
               <Route path="/about" element={<div>About Page</div>} />
               <Route path="/services" element={<div>Services Page</div>} />
               <Route path="/contact" element={<div>Contact Page</div>} />
